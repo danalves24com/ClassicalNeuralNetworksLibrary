@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ClassicalNeuralNetworksLibrary.Schemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassicalNeuralNetworksLibrary.Schemas
+namespace ClassicalNeuralNetworksLibrary.Models
 {
     public class NeuralNetworkModel
     {

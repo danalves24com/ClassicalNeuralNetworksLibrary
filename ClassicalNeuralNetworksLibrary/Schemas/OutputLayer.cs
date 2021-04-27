@@ -15,13 +15,13 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
             double sum = 0.0;
             foreach(Neuron neuron in lastHiddenLayer.neurons)
             {
-                double neuronOut = neuron.output;
+                double neuronOut = Math.Pow(Math.E, neuron.output);
                 sum += neuronOut;
             }
             int p = 0;
             foreach (Neuron neuron in lastHiddenLayer.neurons)
             {
-                double neuronOut = neuron.output;
+                double neuronOut = Math.Pow(Math.E, neuron.output);
                 ProbabilityDistribution[p] = neuronOut / sum;
                 p += 1;
             }
