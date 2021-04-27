@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ClassicalNeuralNetworksLibrary.Schemas
 {
-    class Neuron
+    public class Neuron
     {
         public double[] weights { get; set; }
         public double output { get; set; }
@@ -32,10 +32,17 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         }
 
 
-        public void init(int dims)
+        public Neuron init(int dims)
         {
             this.weights = new double[dims];
+            int index = 0;
+            foreach(double w in weights)
+            {
+                weights[index] = new Random().NextDouble();
+                index += 1;
+            }
             this.bias = 0;
+            return this;
         }
 
         public Neuron()
