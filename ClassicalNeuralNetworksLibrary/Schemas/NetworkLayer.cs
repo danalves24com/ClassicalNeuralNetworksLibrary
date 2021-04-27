@@ -12,8 +12,10 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
     {
         public int inputSize { get; set; } = 1;
         public int size { get; set; } = 1;
+
         public double[] inputs { get; set; }
         public double[] outputs { get; set; }
+
         public List<Neuron> neurons { get; set; }
 
         public NetworkLayer(int inputSize, int size)
