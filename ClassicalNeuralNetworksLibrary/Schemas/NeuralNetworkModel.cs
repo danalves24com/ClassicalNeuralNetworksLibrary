@@ -16,12 +16,19 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         {
             this.inputLayer = inputLayer;
             this.hiddenLayers = hiddenLayers;
+            outputLayer.lastHiddenLayer = hiddenLayers[hiddenLayers.Length];
             this.outputLayer = outputLayer;
+            
         }
 
         public void Run()
         {
-
+            double[] prviousOutput = inputLayer.inputs;
+            foreach(NetworkLayer layer in this.hiddenLayers)
+            {
+                layer.forward(prviousOutput);
+                
+            }
         }
 
     }
