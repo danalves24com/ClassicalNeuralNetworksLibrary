@@ -1,10 +1,11 @@
-﻿using System;
+﻿using ClassicalNeuralNetworksLibrary.Schemas;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassicalNeuralNetworksLibrary.Schemas
+namespace ClassicalNeuralNetworksLibrary.Models
 {
     public class NeuralNetworkModel
     {
@@ -16,19 +17,23 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         {
             this.inputLayer = inputLayer;
             this.hiddenLayers = hiddenLayers;
-            outputLayer.lastHiddenLayer = hiddenLayers[hiddenLayers.Length];
+            outputLayer.lastHiddenLayer = hiddenLayers[hiddenLayers.Length-1];
             this.outputLayer = outputLayer;
             
         }
 
         public void Run()
         {
-            double[] prviousOutput = inputLayer.inputs;
+            NetworkLayer lastLayer = null;
+            double[] previousOutput = inputLayer.inputs;
             foreach(NetworkLayer layer in this.hiddenLayers)
             {
-                layer.forward(prviousOutput);
-                
+                layer.forward(previousOutput);
+                previousOutput = layer.outputs;
+                lastLayer = layer;
             }
+            outputLayer.lastHiddenLayer = lastLayer;
+            outputLayer.softmax();
         }
 
     }

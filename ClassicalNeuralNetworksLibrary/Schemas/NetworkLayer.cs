@@ -33,29 +33,24 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
 
         public void log()
         {
-            DataTable table = new DataTable();
-            table.Columns.Add("inputs");
-            table.Columns.Add("outputs");
 
             int i = 0;
-            foreach(double input in this.inputs)
+            foreach(double outp in this.outputs)
             {
-                DataRow row = table.NewRow();
-                row[0] = input;
-                row[1] = neurons[i].output;
-                Console.WriteLine("{0} ==> {1}", input, neurons[i].output);
-                table.Rows.Add(row);
+
+                Console.WriteLine(outp);
+                //Console.WriteLine("{0} ==> {1}", input, neurons[i].output);
+                //table.Rows.Add(row);
                 i += 1;
             }
-
-            Console.WriteLine(table.ToString());
+            
 
         }
 
         public void forward(double[] inputs)
         {
             this.inputs = inputs;
-            outputs = new double[inputs.Length];
+            outputs = new double[this.neurons.Count];
 
             int i = 0;
             foreach(Neuron neuron in this.neurons)
