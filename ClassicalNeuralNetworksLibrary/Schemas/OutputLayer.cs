@@ -25,6 +25,7 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
                 ProbabilityDistribution[p] = neuronOut / sum;
                 p += 1;
             }
+            Console.WriteLine(String.Join(", ", ProbabilityDistribution));
             return ProbabilityDistribution;
         }
 
