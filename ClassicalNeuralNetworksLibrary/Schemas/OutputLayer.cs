@@ -8,6 +8,7 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
 {
     public class OutputLayer
     {
+        public Dataset data { get; set; }
         public NetworkLayer lastHiddenLayer { get; set; }
         public double[] softmax()
         {
@@ -27,6 +28,19 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
             }
             Console.WriteLine(String.Join(", ", ProbabilityDistribution));
             return ProbabilityDistribution;
+        }
+        public double loss()
+        {
+            int index = 0, it = 0;
+            foreach(int o in this.data.output)
+            {
+                if(o>0)
+                {
+                    index = it;
+                }
+                it += 1;
+            }
+            return -1 * Math.Log(data.inputs[index]);
         }
 
     }
