@@ -18,7 +18,7 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
             foreach(double inp in inputs)
             {
                 double produc = inp * weights[index];
-                this.output += produc;
+                this.output += produc>0?produc:0.0; // relu 
                 index += 1;
             }
 
