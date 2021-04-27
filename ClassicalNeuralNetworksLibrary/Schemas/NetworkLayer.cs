@@ -34,15 +34,7 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         public void log()
         {
 
-            int i = 0;
-            foreach(double outp in this.outputs)
-            {
-
-                Console.WriteLine(outp);
-                //Console.WriteLine("{0} ==> {1}", input, neurons[i].output);
-                //table.Rows.Add(row);
-                i += 1;
-            }
+           
             
 
         }

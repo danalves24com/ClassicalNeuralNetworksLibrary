@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace ClassicalNeuralNetworksLibrary.Schemas
 {
-    class Dataset
+    public class Dataset
     {
+        public double[] inputs;
+        public double[] output;
+
+        public Dataset(double[] inputs, double[] output)
+        {
+            this.inputs = inputs;
+            this.output = output;
+        }
     }
 }
