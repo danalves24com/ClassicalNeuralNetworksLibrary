@@ -29,6 +29,11 @@ namespace ClassicalNeuralNetworksLibrary.Models
         }
 
 
+        private void optimize()
+        {
+
+        }
+
         
         public void passData(Dataset dataset)
         {

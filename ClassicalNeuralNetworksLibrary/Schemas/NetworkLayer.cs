@@ -31,6 +31,15 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         }
 
 
+
+
+
+        public double[] computeGradient()
+        {
+            return new double[this.neurons.Count];
+        }
+
+
         public void log()
         {
 

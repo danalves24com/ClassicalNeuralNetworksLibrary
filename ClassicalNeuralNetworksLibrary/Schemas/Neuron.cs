@@ -25,6 +25,13 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
             return output;
         }
 
+
+        public double computePartialDerivative()
+        {
+            return 0.01;
+        }
+
+
         public Neuron(double[] weights, double bias)
         {
             this.weights = weights;
