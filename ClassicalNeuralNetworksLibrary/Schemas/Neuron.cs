@@ -15,19 +15,25 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         {
             this.output = this.bias;
             int index = 0;
+
+
             foreach(double inp in inputs)
             {
                 double produc = inp * weights[index];
-                this.output += produc>0?produc:0.0; // relu 
+                this.output += produc>0?produc:0.0;
                 index += 1;
             }
+
+
 
             return output;
         }
 
 
-        public double computePartialDerivative()
+        public double optimizeWeights()
         {
+            double localDerivative = 0.0;
+
             return 0.01;
         }
 
