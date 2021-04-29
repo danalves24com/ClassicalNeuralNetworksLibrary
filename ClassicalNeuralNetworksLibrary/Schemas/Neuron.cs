@@ -30,6 +30,12 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         }
 
 
+        public double adjustedNeuronError()
+        {
+            return 0.0;
+        }
+
+
         public double optimizeWeights()
         {
             double localDerivative = 0.0;

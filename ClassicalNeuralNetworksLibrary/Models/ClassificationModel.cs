@@ -7,6 +7,13 @@ using System.Threading.Tasks;
 
 namespace ClassicalNeuralNetworksLibrary.Models
 {
+
+
+    public class ClassificationModelBackpropagation {
+
+    }
+
+
     public class ClassificationModel
     {
         private NeuralNetworkModel model = null;
