@@ -38,7 +38,10 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
 
         public double optimizeWeights()
         {
-            double localDerivative = 0.0;
+            foreach(double weight in this.weights)
+            {
+
+            }
 
             return 0.01;
         }
