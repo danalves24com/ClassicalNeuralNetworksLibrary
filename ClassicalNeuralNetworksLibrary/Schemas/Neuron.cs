@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassicalNeuralNetworksLibrary.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,11 +37,11 @@ namespace ClassicalNeuralNetworksLibrary.Schemas
         }
 
 
-        public double optimizeWeights()
+        public double optimizeWeights(NeuralNetworkModel parentModel)
         {
             foreach(double weight in this.weights)
             {
-
+                parentModel.outputLayer.lossDerivative();
             }
 
             return 0.01;
